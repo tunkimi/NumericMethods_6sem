@@ -67,19 +67,10 @@ namespace Lab_1_1
 
             }
 
-
-            //Matrix x = new Matrix(n, 1);
-            //x[n - 1, 0] = z[n - 1, 0] * U[n - 1, n - 1];
-            //for (int i = n - 1; i > -1; i--)
-            //{
-            //    for (int j = i + 1; j < n; j++)
-            //    {
-            //        z[i, 0] = z[i, 0] - x[j, 0] * U[i, j];
-            //        x[j, 0] = z[j, 0] / U[j, j];
-            //    }
-
-            //}
-            Console.WriteLine(x.ToString());
+            //вывод
+            Console.WriteLine("x:\n" + x.ToString());
+            Console.WriteLine("\ndet(A) = " + Matrix.Determinant(A));
+            Console.WriteLine("\nA^-1:\n" + A.Reverse());
         }
     }
 
