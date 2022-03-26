@@ -89,6 +89,14 @@ namespace Lab_1_3
             get { return nCols; }
         }
 
+        public static Matrix UnoMatrix(int size)
+        {
+            Matrix m = new Matrix(size, size);
+            for(int i=0; i < size; i++)
+                m[i,i] = 1;
+            return m;
+        }
+
         public override string ToString()
         {
             string strMatrix = "";
