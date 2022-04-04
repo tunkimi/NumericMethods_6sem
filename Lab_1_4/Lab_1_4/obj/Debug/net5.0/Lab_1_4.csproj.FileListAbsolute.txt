@@ -1,0 +1,16 @@
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.exe
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.deps.json
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.runtimeconfig.json
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.runtimeconfig.dev.json
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.dll
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\bin\Debug\net5.0\Lab_1_4.pdb
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.csproj.AssemblyReference.cache
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.AssemblyInfoInputs.cache
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.AssemblyInfo.cs
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.csproj.CoreCompileInputs.cache
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.dll
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\refint\Lab_1_4.dll
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.pdb
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\Lab_1_4.genruntimeconfig.cache
+C:\Users\iTunkimi\Desktop\GitReps\NumericMethods_6sem\Lab_1_4\Lab_1_4\obj\Debug\net5.0\ref\Lab_1_4.dll
