@@ -18,22 +18,48 @@ namespace Lab_1_1
                                                     {  30}});
 
 
+            Matrix Ak = new Matrix(A);
+
+
             //получаем матрицы
 
-            Matrix U = new Matrix(A);
-            Matrix L = new Matrix(n,n);
+            Matrix L = Matrix.UnoMatrix(n);
+            Matrix U = new Matrix(n, n);
 
-
-            for (int k = 1; k < n; k++)
+            for (int k = 0; k < n - 1; k++)
             {
-                for (int i = k - 1; i < n; i++)                     
-                    for (int j = i; j < n; j++)
-                        L[j, i] = U[j, i] / U[i, i];
-                                                                    
-                for (int i = k; i < n; i++)                        
-                    for (int j = k - 1; j < n; j++)
-                        U[i,j] = U[i,j] - L[i,k - 1] * U[k - 1,j];
+                Matrix m = new Matrix(n, n);
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < n; j++) 
+                    {
+                        if (i == j)
+                            m[i, j] = 1;
+                        else if (j != k || i < j)
+                        {
+                            m[i, j] = 0;
+                        }
+                        else
+                        {
+                            m[i, j] = -Ak[i, k] / Ak[k, k];
+                        }
+                    }
+                Ak = m * Ak;
+                L *= m.Reverse();
             }
+            U = Ak;
+
+
+
+            //проверка LU разложения
+            Console.WriteLine("проверка LU разложения:");
+            Console.WriteLine(L);
+            Console.WriteLine("*");
+            Console.WriteLine(U);
+            Console.WriteLine("=");
+            Console.WriteLine(L*U);
+
+
+
 
             //первый этап
 
@@ -65,9 +91,20 @@ namespace Lab_1_1
             }
 
             //вывод
+            Console.WriteLine();
             Console.WriteLine("x:\n" + x.ToString());
-            Console.WriteLine("\ndet(A) = " + Matrix.Determinant(A));
-            Console.WriteLine("\nA^-1:\n" + A.Reverse());
+
+            Console.WriteLine();
+            Console.WriteLine("det(A):");
+            Console.WriteLine(Matrix.Determinant(A));
+
+            Console.WriteLine();
+            Console.WriteLine("A^-1");
+            Console.WriteLine(A.Reverse());
+
+            Console.WriteLine();
+            Console.WriteLine("A*a^-1 = ");
+            Console.WriteLine(A*A.Reverse());
         }
     }
 

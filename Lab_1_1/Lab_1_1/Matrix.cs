@@ -105,6 +105,14 @@ namespace Lab_1_1
             return strMatrix;
         }
 
+        public static Matrix UnoMatrix(int size)
+        {
+            Matrix m = new Matrix(size, size);
+            for (int i = 0; i < size; i++)
+                m[i, i] = 1;
+            return m;
+        }
+
         public override bool Equals(object obj)
         {
             return (obj is Matrix) && this.Equals((Matrix)obj);
