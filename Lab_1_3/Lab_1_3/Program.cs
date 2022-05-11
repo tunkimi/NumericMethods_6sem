@@ -28,20 +28,19 @@ namespace Lab_1_3
             #region Метод простых интераций
 
             for (int i = 0; i < N; i++)
-            {
-                beta[i, 0] = B[i] / A[i, i];
-                for(int j = 0; j < N; j++)
-                {
-                    if (i != j)
+            {                               
+                beta[i, 0] = B[i] / A[i, i];                     //Определяем вектор Бета
+                                                                 //свободный член разделить на диагональный элемент матрицы
+
+                for (int j = 0; j < N; j++)                      //И матрицу Альфа
+                {                                                //Элементы делятся на минус диагональный эдемент
+                    if (i != j)                                  //А диагональный элемент обнуляется
                         alpha[i, j] = -A[i, j] / A[i, i];
                     else
                         alpha[i, j] = 0;
                 }
             }
-            double alpnorma = alpha.NormForRow();
-            double k = Math.Log(eps) - Math.Log(beta.NormForRow());
-            k += Math.Log(1 - alpnorma);
-            k /= Math.Log(alpnorma);
+            double alpnorma = alpha.NormForRow();                   //высчитывается норма для определения сходимости СЛАУ
             Matrix x = null, xtemp = null;
             if (alpnorma >= 1)
             {
@@ -49,14 +48,15 @@ namespace Lab_1_3
             }
             else
             {
-                x = new Matrix(beta);
-                xtemp = beta + alpha * beta;
+                x = new Matrix(beta);                               //берем любой вектор, от которого будем двигаться к ответу
+                xtemp = beta + alpha * beta;                        //высчитываем следующий шаг
+
                 bool usl = (xtemp - x).Norm() > eps * (1 - alpnorma) / alpnorma;
-                for (int i = 0; usl; i++)
+                for (int i = 0; usl; i++)                                           //зацкливаем движение к ответу
                 {
                     x = xtemp;
                     xtemp = beta + alpha * x;
-                    usl = (xtemp - x).Norm() > eps * (1 - alpnorma) / alpnorma;
+                    usl = (xtemp - x).Norm() > eps * (1 - alpnorma) / alpnorma;     //проверяем удовлетворение заданной точности
                 }
                 x = xtemp;
             }
@@ -70,12 +70,13 @@ namespace Lab_1_3
             Matrix Bm = new Matrix(alpha);
             Matrix Cm = new Matrix(alpha);
 
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < N; i++)             //Выражаем вспомогательные матрицы Bm и Cm из матрицы Альфа, вычисленной ранее
                 for (int j = 0; j < N; j++)
                     if (i <= j)
-                        Bm[i, j] = 0;
+                        Bm[i, j] = 0;               //Нижнетреугольная матрица (диагональ равна нулю)
                     else
-                        Cm[i, j] = 0;
+                        Cm[i, j] = 0;               //Верхнетреугольная матрица
+
 
             Bm = Matrix.UnoMatrix(N) - Bm;
             Bm = Bm.Reverse();
@@ -90,9 +91,9 @@ namespace Lab_1_3
             else
             {
                 x = new Matrix(beta);
-                xtemp = beta + alpha * beta;
+                xtemp = Bm * beta + Bm * Cm * x;                                    //Вычисляем следующий элемент с помощью новых матриц
                 bool usl = (xtemp - x).Norm() > eps * (1 - alpnorma) / cmnorma;
-                for (int i = 0; usl; i++)
+                for (int i = 0; usl; i++)                                           //Аналогично зацикливаем вычисление, пока не достигнем нужной точности
                 {
                     x = xtemp;
                     xtemp = Bm * beta + Bm * Cm * x;

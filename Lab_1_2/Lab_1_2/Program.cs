@@ -16,12 +16,18 @@ namespace Lab_1_2
             int N = A.GetnRows;
 
             double[] d = new double[] { -58, 161, -114, -90, -55};
+
+
             double[] P = new double[N];
             double[] Q = new double[N];
+
+
+
             double[] a = new double[N];
             double[] b = new double[N];
             double[] c = new double[N];
             double[] x = new double[N];
+
 
             b[0] = A[0, 0];
             c[0] = A[0, 1];
@@ -33,6 +39,9 @@ namespace Lab_1_2
                 b[i] = A[i, i];
                 c[i] = A[i, i + 1];
             }
+
+
+
             P[0] = -c[0] / b[0];
             Q[0] = d[0] / b[0];
             for(int i=1; i<N-1; i++)
@@ -42,9 +51,9 @@ namespace Lab_1_2
             }
             Q[N-1] = (d[N - 1] - a[N - 1] * Q[N - 2]) / (b[N - 1] + a[N - 1] * P[N - 2]);
 
-            //for (int i = 0; i < N; i++) {
-            //    Console.WriteLine($"P[{i}] = " + P[i] + $"\nQ[{i}] = " + Q[i]);
-            //}
+
+
+
 
             x[N-1] = Q[N-1];
             for(int i = N - 2; i > -1; i--)
